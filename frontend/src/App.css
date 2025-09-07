@@ -1,0 +1,139 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.square {
+  padding: 0;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid #CCC;
+  border-radius: 0.25rem;
+  background-color: #FFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: default;
+  user-select: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* 正确字母 + 正确位置（绿色） */
+.square.correct {
+  background-color: #6aaa64; /* Wordle 原版绿色 */
+  border-color: #6aaa64;
+  color: #FFF;
+}
+
+/* 正确字母 + 错误位置（黄色） */
+.square.present {
+  background-color: #c9b458; /* Wordle 原版黄色 */
+  border-color: #c9b458;
+  color: #FFF;
+}
+
+/* 错误字母（灰色） */
+.square.absent {
+  background-color: #787c7e; /* Wordle 原版灰色 */
+  border-color: #787c7e;
+  color: #FFF;
+}
+
+/* Board布局样式 */
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.keysquare {
+  /* box-sizing: border-box; */
+  padding: 0; /* 移除内边距 */
+  width: 2.5rem;
+  height: 3.5rem;
+  border: 2px solid #CCC;
+  border-radius: 0.25rem;
+  background-color: #DDD;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: center;/* text-transform: uppercase; */
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s, border-color 0.3s; /* 增加过渡动画 */
+}
+.key:active {
+  transform: scale(0.95);
+}
+.key.correct {
+  background-color: #6aaa64; /* Wordle 原版绿色 */
+  border-color: #6aaa64;
+  color: #FFF;
+}
+.key.present {
+  background-color: #c9b458; /* Wordle 原版黄色 */
+  border-color: #c9b458;
+  color: #FFF;
+}
+.key.absent {
+  background-color: #787c7e; /* Wordle 原版灰色 */
+  border-color: #787c7e;
+  color: #FFF;
+}
+.key.special {
+  width: calc(var(--key-width) * 1.5)
+}
+.keyboard {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
